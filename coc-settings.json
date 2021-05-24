@@ -1,0 +1,6 @@
+{
+    "diagnostic.displayByAle": true,
+    "eslint.autoFixOnSave": true,
+    "prettier.requireConfig": true
+}
+
