@@ -11,6 +11,13 @@ Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 
 """
+Plug 'OmniSharp/omnisharp-vim'
+let g:OmniSharp_server_use_mono = 1
+autocmd FileType cs,csharp nnoremap <buffer> <silent> <F3> :OmniSharpGotoDefinition<CR>
+autocmd FileType cs,csharp nnoremap <buffer> <silent> <F4> :OmniSharpFindUsages<CR>
+"""
+
+"""
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 nmap <silent> <F3> <Plug>(coc-definition)
 nmap <silent> <F4> <Plug>(coc-references)
@@ -24,7 +31,7 @@ let g:coc_global_extensions =
             \ 'coc-jedi', 'coc-prettier', 'coc-eslint', 
             \ 'coc-go', 'coc-angular', 'coc-flutter', 
             \ 'coc-html', 'coc-cmake', 'coc-css', 
-            \ '@yaegassy/coc-intelephense', 'coc-omnisharp', 
+            \ '@yaegassy/coc-intelephense', 
             \ 'coc-xml', 'coc-yaml', 'coc-vetur'
             \ ]
 """
@@ -32,6 +39,9 @@ let g:coc_global_extensions =
 """
 Plug 'dense-analysis/ale'
 let g:ale_disable_lsp = 1
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
 """
 
 """
@@ -87,7 +97,6 @@ autocmd FileType dart nnoremap <silent> <F2> :DartFmt <CR>
 autocmd FileType cpp,hpp,c,h,rust nnoremap <silent> <F2> :Autoformat <CR>
 autocmd FileType php,javascript,typescript,typescriptreact nnoremap <silent> <F2> :CocCommand prettier.formatFile <CR>
 ""formatting config""
-
 
 ""navigation""
 noremap j gj
