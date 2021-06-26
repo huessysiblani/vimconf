@@ -24,6 +24,8 @@ nmap <silent> <F4> <Plug>(coc-references)
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent><expr> <c-space> coc#refresh()
+autocmd User CocLocationsChange CocList --normal location
+let g:coc_enable_locationlist = 0
 let g:coc_global_extensions = 
             \ [
             \ 'coc-json', 'coc-tsserver', 'coc-rust-analyzer',
