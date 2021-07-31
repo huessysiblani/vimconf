@@ -13,8 +13,8 @@ Plug 'morhetz/gruvbox'
 """
 Plug 'OmniSharp/omnisharp-vim'
 let g:OmniSharp_server_use_mono = 1
-autocmd FileType cs,csharp nnoremap <buffer> <silent> <F3> :OmniSharpGotoDefinition<CR>
-autocmd FileType cs,csharp nnoremap <buffer> <silent> <F4> :OmniSharpFindUsages<CR>
+autocmd initvim FileType cs,csharp nnoremap <buffer> <silent> <F3> :OmniSharpGotoDefinition<CR>
+autocmd initvim FileType cs,csharp nnoremap <buffer> <silent> <F4> :OmniSharpFindUsages<CR>
 """
 
 """
@@ -42,7 +42,8 @@ let g:coc_global_extensions =
 Plug 'dense-analysis/ale'
 let g:ale_disable_lsp = 1
 let g:ale_linters = {
-\ 'cs': ['OmniSharp']
+\ 'cs': ['OmniSharp'],
+\ 'cpp': ['clang-tidy']
 \}
 """
 
@@ -72,6 +73,14 @@ let g:project_chdir#items =
   \   'Cargo.toml': 1,
   \ }
 """
+
+"""
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsEditSplit="horizontal"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"""
 call plug#end()
 
 ""quickfix""
@@ -95,9 +104,9 @@ nnoremap <silent> <S-Tab> :Vexplore<CR>
 ""netrw config and keybinding"" 
 
 ""formatting config""
-autocmd FileType dart nnoremap <silent> <F2> :DartFmt <CR>
-autocmd FileType cpp,hpp,c,h,rust nnoremap <silent> <F2> :Autoformat <CR>
-autocmd FileType php,javascript,typescript,typescriptreact nnoremap <silent> <F2> :CocCommand prettier.formatFile <CR>
+autocmd initvim FileType dart nnoremap <silent> <F2> :DartFmt <CR>
+autocmd initvim FileType cpp,hpp,c,h,rust nnoremap <silent> <F2> :Autoformat <CR>
+autocmd initvim FileType php,javascript,typescript,typescriptreact nnoremap <silent> <F2> :CocCommand prettier.formatFile <CR>
 ""formatting config""
 
 ""navigation""
