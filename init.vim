@@ -24,6 +24,7 @@ nmap <silent> <F4> <Plug>(coc-references)
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent><expr> <c-space> coc#refresh()
+autocmd initvim FileType cpp,cc,c,hpp,h nnoremap <buffer> <silent><S-q> :CocCommand clangd.switchSourceHeader<CR>
 autocmd User CocLocationsChange CocList --normal location
 let g:coc_enable_locationlist = 0
 let g:coc_global_extensions = 
@@ -43,7 +44,11 @@ Plug 'dense-analysis/ale'
 let g:ale_disable_lsp = 1
 let g:ale_linters = {
 \ 'cs': ['OmniSharp'],
-\ 'cpp': ['clang-tidy']
+\ 'cpp': ['clang-tidy', 'g++', 'gcc'],
+\ 'c': ['clang-tidy', 'g++', 'gcc'],
+\ 'typescript': ['tslint'],
+\ 'typescriptreact': ['tslint'],
+\ 'javascript': ['tslint']
 \}
 """
 
