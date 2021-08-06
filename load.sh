@@ -42,7 +42,7 @@ if ! [[ -f "$SH_RC_FILE" ]]; then
 	CREATE_ALIAS=false
 fi
 
-nvim_image_link="https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage"
+nvim_image_link="https://github.com/neovim/neovim/releases/download/v0.5.0/nvim.appimage"
 echo "Downloading and storing nvim-appimage at $(pwd)/bin/nvim-appimage"
 curl -fLo "$(pwd)/bin/nvim-appimage" "$nvim_image_link"
 chmod +x ./bin/nvim-appimage
