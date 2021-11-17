@@ -1,3 +1,5 @@
+extends c
+
 snippet stdout "Stdout snippet"
 std::cout << ${1} << std::endl;
 endsnippet
@@ -6,40 +8,28 @@ snippet stderr "Stderr snippet"
 std::cerr << ${1} << std::endl;
 endsnippet
 
-snippet inc "Include snippet"
-#include <${1}>
-endsnippet
-
-snippet incc "Second include snippet"
-#include "${1}"
-endsnippet
-
 snippet ns "Namespace snippet"
 namespace ${1} {}
-endsnippet
-
-snippet com "Comment snippet"
-/* ${1} */
-endsnippet
-
-snippet fnh "Snippet to create a function"
-${1} ${2}(${3});
-endsnippet
-
-snippet fnc "Snippet to create a function"
-${1} ${2}(${3}) {
-    ${0}
-}
-endsnippet
-
-snippet for "Snippet to create a for loop"
-for(size_t ${1} = 0; $1 < ${2}; ++$1) {
-    ${0}
-}
 endsnippet
 
 snippet fore "Snippet to create a for loop"
 for(${1} : ${2}){
     ${0}
 }
+endsnippet
+
+snippet up "std::unique_ptr<...>" w
+std::unique_ptr<${1}>
+endsnippet
+
+snippet mu "std::make_unique<...>" w
+std::make_unique<${1}>
+endsnippet
+
+snippet sp "std::shared_ptr<...>" w
+std::shared_ptr<${1}>
+endsnippet
+
+snippet ms "std::make_shared<...>" w
+std::make_shared<${1}>
 endsnippet

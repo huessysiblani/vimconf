@@ -1,0 +1,27 @@
+snippet inc "Include snippet"
+#include <${1}>
+endsnippet
+
+snippet incc "Second include snippet"
+#include "${1}"
+endsnippet
+
+snippet com "Comment snippet"
+/* ${1} */
+endsnippet
+
+snippet fnh "Snippet to create a function"
+${1} ${2}(${3});
+endsnippet
+
+snippet fnc "Snippet to create a function"
+${1} ${2}(${3}) {
+    ${0}
+}
+endsnippet
+
+snippet for "Snippet to create a for loop"
+for(size_t ${1} = 0; $1 < ${2}; ++$1) {
+    ${0}
+}
+endsnippet

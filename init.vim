@@ -29,13 +29,13 @@ autocmd User CocLocationsChange CocList --normal location
 let g:coc_enable_locationlist = 0
 let g:coc_global_extensions = 
             \ [
-            \ 'coc-json', 'coc-tsserver', 'coc-rust-analyzer',
-            \ 'coc-clangd', 'coc-tailwindcss', 
+            \ 'coc-json', 'coc-tsserver',
+            \ 'coc-clangd',
             \ 'coc-jedi', 'coc-prettier', 'coc-eslint', 
-            \ 'coc-go', 'coc-angular', 'coc-flutter', 
+            \ 'coc-go', 'coc-angular',
             \ 'coc-html', 'coc-cmake', 'coc-css', 
             \ '@yaegassy/coc-intelephense', 
-            \ 'coc-xml', 'coc-yaml', 'coc-vetur'
+            \ 'coc-xml', 'coc-yaml',
             \ ]
 """
 
@@ -110,8 +110,8 @@ nnoremap <silent> <S-Tab> :Vexplore<CR>
 
 ""formatting config""
 autocmd initvim FileType dart nnoremap <silent> <F2> :DartFmt <CR>
-autocmd initvim FileType cpp,hpp,c,h,rust nnoremap <silent> <F2> :Autoformat <CR>
-autocmd initvim FileType php,javascript,typescript,typescriptreact nnoremap <silent> <F2> :CocCommand prettier.formatFile <CR>
+autocmd initvim FileType cpp,hpp,c,h,rust,php nnoremap <silent> <F2> :Autoformat <CR>
+autocmd initvim FileType javascript,typescript,typescriptreact nnoremap <silent> <F2> :CocCommand prettier.formatFile <CR>
 ""formatting config""
 
 ""navigation""
