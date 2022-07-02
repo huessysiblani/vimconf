@@ -10,7 +10,7 @@ if [[ -x "$(command -v apt)" ]]; then
 	echo "Installing npm"
 	sudo apt-get install npm
         sudo pacman -S npm
-	if ! [[ -x "$(command -v curl)" ]]; then
+        if ! [[ -x "$(command -v curl)" ]]; then
 		echo "Unable to find curl. Installing curl."
 		sudo apt-get install curl
                 sudo pacman -S curl
@@ -44,7 +44,7 @@ if ! [[ -f "$SH_RC_FILE" ]]; then
 	CREATE_ALIAS=false
 fi
 
-nvim_image_link="https://github.com/neovim/neovim/releases/download/v0.6.1/nvim.appimage"
+nvim_image_link="https://github.com/neovim/neovim/releases/download/v0.7.2/nvim.appimage"
 echo "Downloading and storing nvim-appimage at $(pwd)/bin/nvim-appimage"
 curl -fLo "$(pwd)/bin/nvim-appimage" "$nvim_image_link"
 chmod +x ./bin/nvim-appimage

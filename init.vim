@@ -9,6 +9,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
+Plug 'kyazdani42/nvim-palenight.lua'
 
 """
 Plug 'OmniSharp/omnisharp-vim'
@@ -143,5 +145,5 @@ set termguicolors
 set background=dark
 set foldmethod=syntax
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-colorscheme gruvbox
+colorscheme palenight
 ""other flags and config""
